@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="document.js"></script>
+</head>
+<body>
+
+    <h1 id="title">Title</h1>
+    <h2 class="subtitle">Sub title</h2>
+    <div class="container" id="container">
+        <div class="block black current">1</div>
+        <div class="block black">2</div>
+    </div>
+    <div class="footer"></div>
+    <script>
+
+        setTimeout(function(){
+            console.assert(typeof $ === 'function', 'Document ready is not defined');
+        }, 100);
+
+        $(document).ready(function(){
+            var res = false;
+
+            console.assert(typeof $ === 'function', 'Document ready');
+            res = $('#title');
+            console.assert(typeof res === 'object', 'Select by id');
+            res = $('.block');
+            console.assert(typeof res === 'object', 'Select by class');
+            console.assert(res.length > 1, 'Select by class');
+            res = $('.container .block');
+            console.assert(typeof res === 'object', 'Select by class in class');
+            console.assert(res.length > 1, 'Select by class in class');
+            res = $('.block.current');
+            console.assert(typeof res === 'object', 'Select by multi-class');
+            console.assert(res.length === 1, 'Select by class in multi-class');
+            res = $('.block.black');
+            console.assert(res.length > 1, 'Select by class in multi-class');
+        });
+
+    </script>
+</body>
+</html>
