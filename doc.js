@@ -121,7 +121,6 @@
         this.className += ' ' + c + ' ';
         return this;
     };
-
     NodeList.prototype.addClass = function (c) {
         Array.prototype.forEach.call(this, function (el) {
             el.addClass(c);
