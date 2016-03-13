@@ -74,7 +74,7 @@
     };
 
     Element.prototype.removeAttr = function (k) {
-        this[k] = false;
+        this.removeAttribute(k);
     };
     NodeList.prototype.removeAttr = function (k) {
         Array.prototype.forEach.call(this, function (el) {
