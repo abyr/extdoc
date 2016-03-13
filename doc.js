@@ -1,9 +1,4 @@
 (function () {
-
-    /**
-     * ExtDoc
-     * @param {String} s CSS selector
-     */
     var Doc = function (s) {
         if (!s || s === document) {
             return document;
